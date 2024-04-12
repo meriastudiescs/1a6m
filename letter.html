@@ -1,0 +1,64 @@
+<?php include 'verificar_sesion.php'; ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1Y6M</title>
+<link rel="stylesheet" href="assets/styles.css"> <!-- Enlace al archivo CSS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Mi changuito, </strong>
+                        <p>
+                            ¡Qué rápido ha pasado el tiempo! Ya estamos cumpliendo un año y seis meses juntos. Parece que fue ayer cuando empezamos este viaje lleno de amor, risas y momentos inolvidables. Cada día a tu lado ha sido un regalo. 
+                        </p>
+                        <p style="margin-left: 40px; margin-top: 15px; font-size: 7px; margin-right: 45px; text-align: center;">
+                            Presiona el el ícono <span class="material-symbols-outlined" style="font-size: 5px;">
+                                theaters
+                                </span> de para continuar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="irAFotosButton" class="material-symbols-outlined" style="display: block; margin: 20px auto; font-size: 24px;">local_movies</button>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+        document.getElementById("irAFotosButton").addEventListener("click", function() {
+            window.location.href = 'recuerdos.html'; 
+        });
+    </script>
+</body>
+<script>
+    function hearts(){
+
+        const container = document.querySelector('.container');
+
+        const create = document.createElement('div');
+        create.classList.add('hearts');
+        create.innerHTML = '❤';
+        create.style.left = Math.random() * 1000 + 'vw';
+        create.style.animationDuration = Math.random()* 3 + 2 + 's';
+
+        container.appendChild(create)
+        // setTimeout(() => {
+        //     create.remove();
+        // }, 5000); 
+    }
+    setInterval(hearts, 300);
+</script>
+</html>
